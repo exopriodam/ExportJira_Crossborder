@@ -1,5 +1,5 @@
 from jira import JIRA
-import config
+import config_loader as config
 
 class JiraClient:
     def __init__(self, server=config.JIRA_URL, user=config.JIRA_USER, token=config.JIRA_TOKEN):
