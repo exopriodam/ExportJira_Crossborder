@@ -1,7 +1,7 @@
 from datetime import datetime
 from jira_client import JiraClient
 from transformer import IssueTransformer
-from exporter import CsvExporter
+from exporter import XlsxExporter
 import config_loader as config
 
 def run():
@@ -13,7 +13,7 @@ def run():
     issues = jira_client.fetch_issues(jql)
     data = [IssueTransformer.transform(issue) for issue in issues]
 
-    exporter = CsvExporter("jira_issues.csv")
+    exporter = XlsxExporter("jira_issues.xlsx")
     filename = exporter.export(data)
 
     print(f"✅ Export terminé : {filename}")

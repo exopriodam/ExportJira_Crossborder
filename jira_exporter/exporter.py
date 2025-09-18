@@ -22,3 +22,12 @@ class JsonExporter(Exporter):
         with open(self.filename, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         return self.filename
+
+class XlsxExporter(Exporter):
+    def __init__(self, filename="jira_issues.xlsx"):
+        self.filename = filename
+
+    def export(self, data):
+        df = pd.DataFrame(data)
+        df.to_excel(self.filename, index=False, engine="openpyxl")
+        return self.filename
