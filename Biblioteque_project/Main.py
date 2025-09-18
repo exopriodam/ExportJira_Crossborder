@@ -3,7 +3,7 @@ from models.Member import Member
 from models.Library import Library
 
 def run():
-    livre1 = Book("Le livre de la jungle", "Nisrine Bittich","Available")
+    livre1 = Book("Le livre de la jungle", "Nisrine *","Available")
     livre2 =  Book("1984", "Goerge Orwel","Available")
     user1 = Member("AdamLeFou")
     biblio = Library("Koekelberk")
